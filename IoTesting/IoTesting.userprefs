@@ -1,0 +1,14 @@
+﻿<Properties StartupItem="IoTextFiles\IoTextFiles.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="IoTextFiles\IoSettings.cs">
+    <Files>
+      <File FileName="IoTextFiles\Program.cs" Line="17" Column="50" />
+      <File FileName="IoTextFiles\STable.cs" Line="19" Column="19" />
+      <File FileName="IoTextFiles\IoSettings.cs" Line="11" Column="21" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
