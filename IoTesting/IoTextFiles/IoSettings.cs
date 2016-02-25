@@ -46,16 +46,24 @@ namespace IoTextFiles
 		{
 			try
 			{
-				string _temp = System.IO.File.ReadAllText (getPath () );
+				string _temp = "", _filePath = getPath () ;
 
-				string[] _table = _temp.Replace("\r","").Split ('\n');
-
-				for (int i = 0; i < _table.Length; i++)
+				if (System.IO.File.Exists (_filePath)) 	//Проверка дали пътят е валиден
 				{
-					_stable.stable [i] = _table[i];
-				}
+					System.IO.File.ReadAllText (_filePath);
 
-				return true;
+					string[] _table = _temp.Replace("\r","").Split ('\n');
+
+					for (int i = 0; i < _table.Length; i++)
+					{
+						_stable.stable [i] = _table[i];
+					}
+				}else{
+						Console.WriteLine ("Не е намерен такъв път.");
+						return false;
+					}
+		
+			return true;
 			}catch{
 			}
 
