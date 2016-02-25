@@ -1,0 +1,5 @@
+C:\aula\primeri.csharp.io\IoTesting\IoTextFiles\bin\Release\IoTextFiles.exe
+C:\aula\primeri.csharp.io\IoTesting\IoTextFiles\bin\Release\IoTextFiles.pdb
+C:\aula\primeri.csharp.io\IoTesting\IoTextFiles\obj\x86\Release\IoTextFiles.csprojResolveAssemblyReference.cache
+C:\aula\primeri.csharp.io\IoTesting\IoTextFiles\obj\x86\Release\IoTextFiles.exe
+C:\aula\primeri.csharp.io\IoTesting\IoTextFiles\obj\x86\Release\IoTextFiles.pdb
