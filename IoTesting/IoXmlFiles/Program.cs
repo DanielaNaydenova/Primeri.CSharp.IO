@@ -9,32 +9,66 @@ namespace IoXmlFiles
 	{
 		public static void Main (string[] args)
 		{
-			string value = "simple value", property = "simple property";
+			string value = "", property = "";
 
 			string path = System.IO.Path.Combine (AppDomain.CurrentDomain.BaseDirectory, "test.xml");
 
-			using (XmlWriter writer = XmlWriter.Create (path))
-			{
-				writer.WriteStartDocument ();
+			//Прочитане на xml файл
+			using (XmlReader reader = XmlReader.Create (path)) {
+				while (reader.Read ()) {
+					switch (reader.Name) {
 
-				writer.WriteStartElement ("settings");
+					case "row":
+						property = reader ["property"];
+						value = reader.ReadInnerXml ();
 
-				//Съдържание на файла
-				writer.WriteStartElement ("row");
+						Console.WriteLine ("value = " + value);
+						Console.WriteLine ("property = " + property);
 
-				writer.WriteAttributeString ("property", property);		//<row property = "..." >.... </row>
-				writer.WriteString (value);		//<row> value </row>
+						break;
 
-				writer.WriteEndElement ();
+					case "simpleRow":
+						//property = reader ["property"];
+						value = reader.ReadInnerXml ();
 
-				writer.WriteEndElement ();
-				writer.WriteEndDocument ();
+						Console.WriteLine ("value = " + value);
+						//Console.WriteLine ("property = " + property);
+
+						break;
+					}
+
+				}
 			}
 
-			XDocument document = XDocument.Load (path);
-			document.Save (path);
 
-			System.Diagnostics.Process.Start (path);
+			Console.ReadKey ();
+
+			//Запис на xml файл
+
+//			string path = System.IO.Path.Combine (AppDomain.CurrentDomain.BaseDirectory, "test.xml");
+//
+//			using (XmlWriter writer = XmlWriter.Create (path))
+//			{
+//				writer.WriteStartDocument ();
+//
+//				writer.WriteStartElement ("settings");
+//
+//				//Съдържание на файла
+//				writer.WriteStartElement ("row");
+//
+//				writer.WriteAttributeString ("property", property);		//<row property = "..." >.... </row>
+//				writer.WriteString (value);		//<row> value </row>
+//
+//				writer.WriteEndElement ();
+//
+//				writer.WriteEndElement ();
+//				writer.WriteEndDocument ();
+//			}
+//
+//			XDocument document = XDocument.Load (path);
+//			document.Save (path);
+//
+//			System.Diagnostics.Process.Start (path);
 		}
 	}
 }
